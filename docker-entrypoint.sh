@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+export MYSQL_ROOT_PASSWORD=root
 
 if [ ! -d '/var/lib/mysql/mysql' -a "${1%_safe}" = 'mysqld' ]; then
 	if [ -z "$MYSQL_ROOT_PASSWORD" -a -z "$MYSQL_ALLOW_EMPTY_PASSWORD" ]; then
