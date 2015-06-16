@@ -20,6 +20,7 @@ if [ ! -d '/var/lib/mysql/mysql' -a "${1%_safe}" = 'mysqld' ]; then
 		CREATE USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
 		GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION ;
 		DROP DATABASE IF EXISTS test ;
+		CREATE DATABASE test;
 	EOSQL
 	
 	if [ "$MYSQL_DATABASE" ]; then
